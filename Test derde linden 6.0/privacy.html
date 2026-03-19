@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacybeleid – De Derde Linden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --charcoal: #1a1a1a; --deep: #111111; --gold: #c9a96e; --gold-light: #e0c48a; --white: #ffffff; --border: rgba(201,169,110,0.2); }
+    body { background: var(--deep); color: var(--white); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 28px 60px; transition: background .4s, padding .4s; }
+    nav.scrolled { background: rgba(10,8,6,.92); backdrop-filter: blur(12px); padding: 18px 60px; border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: .05em; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 42px; list-style: none; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,.75); text-decoration: none; font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 400; transition: color .3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--white); }
+    .mobile-menu { display: none; flex-direction: column; gap: 24px; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,8,6,.97); z-index: 999; align-items: center; justify-content: center; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,.75); text-decoration: none; font-size: 1.1rem; letter-spacing: .15em; text-transform: uppercase; }
+    .mobile-close { background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; position: absolute; top: 28px; right: 32px; }
+
+    .page-header { padding: 160px 60px 80px; background: var(--charcoal); border-bottom: 1px solid var(--border); }
+    .page-header p { font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1.15; }
+
+    .content { max-width: 780px; margin: 0 auto; padding: 80px 60px; }
+    .content h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 500; margin: 48px 0 16px; color: var(--white); }
+    .content h2:first-child { margin-top: 0; }
+    .content p { color: rgba(255,255,255,.65); margin-bottom: 16px; font-size: .95rem; }
+    .content ul { color: rgba(255,255,255,.65); padding-left: 20px; margin-bottom: 16px; font-size: .95rem; }
+    .content ul li { margin-bottom: 8px; }
+    .content a { color: var(--gold); text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    .gold-divider { width: 40px; height: 1px; background: var(--gold); margin: 32px 0; }
+    .last-updated { font-size: .75rem; letter-spacing: .1em; color: rgba(255,255,255,.3); margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border); }
+
+    footer { background: #0d0b09; padding: 40px 60px; border-top: 1px solid var(--border); text-align: center; }
+    footer p { font-size: .8rem; color: rgba(255,255,255,.3); }
+
+    @media (max-width: 768px) {
+      nav { padding: 24px 32px; } nav.scrolled { padding: 16px 32px; }
+      .nav-links { display: none; } .nav-hamburger { display: flex; }
+      .page-header { padding: 120px 32px 60px; }
+      .content { padding: 60px 32px; }
+      footer { padding: 40px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">De Derde <span>Linden</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="foundation.html">Foundation</a></li>
+    <li><a href="geschiedenis.html">Geschiedenis</a></li>
+    <li><a href="vacatures.html">Vacatures</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="about.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <a href="foundation.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Foundation</a>
+  <a href="geschiedenis.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Geschiedenis</a>
+  <a href="vacatures.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Vacatures</a>
+</div>
+
+<div class="page-header">
+  <p>Juridisch</p>
+  <h1>Privacybeleid</h1>
+</div>
+
+<div class="content">
+
+  <h2>1. Wie zijn wij?</h2>
+  <p>De Derde Linden B.V. is een besloten vennootschap gevestigd aan de Industrieweg 17, 3641RK Mijdrecht, ingeschreven bij de Kamer van Koophandel onder nummer 83907483. Wij zijn verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in dit privacybeleid.</p>
+  <p>Vragen over dit beleid? Neem contact op via <a href="mailto:rens@dederdelinden.nl">rens@dederdelinden.nl</a>.</p>
+
+  <div class="gold-divider"></div>
+
+  <h2>2. Welke gegevens verzamelen wij?</h2>
+  <p>Wij verzamelen uitsluitend persoonsgegevens die u zelf aan ons verstrekt via het sollicitatieformulier op onze website. Dit betreft:</p>
+  <ul>
+    <li>Naam</li>
+    <li>E-mailadres</li>
+    <li>Telefoonnummer (optioneel)</li>
+    <li>Motivatietekst</li>
+    <li>CV (optioneel)</li>
+    <li>Voorkeur voor een specifiek bedrijf binnen de holding (optioneel)</li>
+  </ul>
+
+  <h2>3. Waarvoor gebruiken wij uw gegevens?</h2>
+  <p>Uw gegevens worden uitsluitend gebruikt voor het beoordelen van uw sollicitatie en het contact met u hierover. Wij gebruiken uw gegevens niet voor marketingdoeleinden en verkopen of delen deze niet met derden, met uitzondering van:</p>
+  <ul>
+    <li><strong>Web3Forms</strong> — de dienst die wij gebruiken om formulierinzendingen door te sturen naar ons e-mailadres. Web3Forms verwerkt uw gegevens uitsluitend ten behoeve van deze doorstuurservice.</li>
+  </ul>
+
+  <h2>4. Hoe lang bewaren wij uw gegevens?</h2>
+  <p>Sollicitatiegegevens worden maximaal 4 weken na afronding van de sollicitatieprocedure bewaard. Indien u toestemming geeft om uw gegevens langer te bewaren voor toekomstige vacatures, hanteren wij een bewaartermijn van maximaal 1 jaar.</p>
+
+  <h2>5. Uw rechten</h2>
+  <p>Op grond van de Algemene Verordening Gegevensbescherming (AVG) heeft u de volgende rechten:</p>
+  <ul>
+    <li>Recht op inzage in uw persoonsgegevens</li>
+    <li>Recht op correctie van onjuiste gegevens</li>
+    <li>Recht op verwijdering van uw gegevens</li>
+    <li>Recht op beperking van de verwerking</li>
+    <li>Recht op bezwaar tegen de verwerking</li>
+  </ul>
+  <p>U kunt deze rechten uitoefenen door contact op te nemen via <a href="mailto:rens@dederdelinden.nl">rens@dederdelinden.nl</a>. Wij reageren binnen 30 dagen.</p>
+
+  <h2>6. Beveiliging</h2>
+  <p>Wij nemen passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen tegen ongeautoriseerde toegang, verlies of misbruik.</p>
+
+  <h2>7. Klachten</h2>
+  <p>Heeft u een klacht over de verwerking van uw persoonsgegevens? U kunt een klacht indienen bij de Autoriteit Persoonsgegevens via <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank">www.autoriteitpersoonsgegevens.nl</a>.</p>
+
+  <h2>8. Wijzigingen</h2>
+  <p>Wij behouden het recht dit privacybeleid te wijzigen. De meest actuele versie is altijd te vinden op deze pagina.</p>
+
+  <p class="last-updated">Laatst bijgewerkt: maart 2026 &nbsp;·&nbsp; De Derde Linden B.V., Industrieweg 17, 3641RK Mijdrecht &nbsp;·&nbsp; KVK 83907483</p>
+
+</div>
+
+<footer>
+  <p>© 2026 De Derde Linden B.V. — <a href="privacy.html" style="color:rgba(255,255,255,.3);">Privacybeleid</a> · <a href="cookies.html" style="color:rgba(255,255,255,.3);">Cookiebeleid</a></p>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+</script>
+</body>
+</html>
