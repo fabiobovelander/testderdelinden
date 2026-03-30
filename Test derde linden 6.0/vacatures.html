@@ -408,6 +408,12 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Toon bestandsnaam na selectie
+  document.getElementById('cvUpload').addEventListener('change', function() {
+    const name = this.files[0] ? this.files[0].name : 'Klik om je CV te uploaden';
+    document.getElementById('fileName').textContent = name;
+  });
 </script>
 </body>
 </html>
